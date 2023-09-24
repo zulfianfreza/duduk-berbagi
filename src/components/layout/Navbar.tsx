@@ -23,18 +23,20 @@ export default function Navbar() {
       <div className=" flex items-center gap-16">
         <Logo
           className={cn(
-            { "text-white": pathname == "/" },
+            {
+              "text-white": pathname == "/",
+            },
             {
               "text-gray-800": scrollPosition > 0,
             }
           )}
         />
-        <div className=" flex items-center gap-x-4">
+        <div className=" md:flex items-center gap-x-2 hidden">
           <Link
             href="/"
             className={cn(
-              " text-gray-800 text-sm",
-              { "text-white": pathname == "/" },
+              " text-gray-800 text-sm  px-4 py-2.5 hover:bg-gray-100 rounded-lg",
+              { "text-white hover:text-gray-800": pathname == "/" },
               {
                 "text-gray-800": scrollPosition > 0,
               }
@@ -45,26 +47,32 @@ export default function Navbar() {
           <Link
             href="/"
             className={cn(
-              " text-gray-800 flex text-sm items-center gap-1",
-              { "text-white": pathname == "/" },
+              " text-gray-800 flex text-sm items-center gap-1  px-4 py-2.5 hover:bg-gray-100 rounded-lg",
+              { "text-white hover:text-gray-800": pathname == "/" },
               {
                 "text-gray-800": scrollPosition > 0,
               }
             )}
           >
             <FiSearch />
-            <p>Cari Aksi</p>
+            <p>Cari Kampanye</p>
           </Link>
         </div>
       </div>
 
       <div className=" flex gap-2">
-        <button className=" h-10 rounded-lg text-sm text-orange-500 px-4 flex justify-center items-center border border-orange-500">
+        <Link
+          href="/sign-in"
+          className=" h-10 rounded-lg text-sm text-orange-500 px-4 flex justify-center items-center border border-orange-500"
+        >
           Masuk
-        </button>
-        <button className=" h-10 rounded-lg text-sm text-white px-4 flex justify-center items-center bg-orange-500">
+        </Link>
+        <Link
+          href="/sign-up"
+          className=" h-10 rounded-lg text-sm text-white px-4 flex justify-center items-center bg-orange-500"
+        >
           Daftar
-        </button>
+        </Link>
       </div>
     </div>
   );

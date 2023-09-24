@@ -1,7 +1,9 @@
+import Heading from "@/components/Heading";
+
 export default function UserSupportPage() {
   return (
     <div className="">
-      <h1 className=" text-gray-800 text-lg font-medium">Dukungan</h1>
+      <Heading title="Dukungan" />
       <div className=" mt-2"></div>
     </div>
   );

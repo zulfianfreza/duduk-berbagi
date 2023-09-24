@@ -1,7 +1,9 @@
+import Heading from "@/components/Heading";
+
 export default function ProfilePage() {
   return (
     <div className="">
-      <h1 className=" text-gray-800 text-lg font-medium">Tentang</h1>
+      <Heading title="Tentang" />
       <div className=" mt-2">
         <p className=" text-gray-800 text-sm">
           Saya adalah seorang pendidik dengan lebih dari sepuluh tahun

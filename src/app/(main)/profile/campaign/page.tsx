@@ -1,7 +1,9 @@
+import Heading from "@/components/Heading";
+
 export default function UserCampaignPage() {
   return (
     <div className="">
-      <h1 className=" text-gray-800 text-lg font-medium">Penggalangan Dana</h1>
+      <Heading title="Campaign" />
       <div className=" mt-2"></div>
     </div>
   );
