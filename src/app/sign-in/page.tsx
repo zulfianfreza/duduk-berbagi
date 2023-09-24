@@ -14,7 +14,7 @@ export default function SignInPage() {
       <div className=" md:w-[398px] lg:w-[480px] xl:w-[542px] h-full bg-[url('/images/sign-in-image.jpg')] bg-cover bg-center absolute brightness-[0.25]"></div>
       <div className=" md:w-[342px] lg:w-[424px] xl:w-[486px] hidden md:block"></div>
       <div className=" flex-1 w-full h-full bg-white md:rounded-tl-[60px] flex items-center justify-center py-16 relative px-5">
-        <Logo className=" absolute top-8 left-8" />
+        <Logo className=" absolute top-5 left-5 md:top-10 md:left-10" />
         <div className=" max-w-xl w-full flex flex-col">
           <div className=" flex flex-col">
             <p className=" text-sm text-gray-800">
