@@ -13,6 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default async function SignInPage() {
+  const session = await getSession();
+
+  if (session) {
+    redirect("/");
+  }
+
   return (
     <div className=" w-full h-screen relative bg-gray-100 flex">
       <div className=" md:w-[398px] lg:w-[480px] xl:w-[542px] h-full bg-[url('/images/sign-in-image.jpg')] bg-cover bg-center absolute brightness-[0.25]"></div>

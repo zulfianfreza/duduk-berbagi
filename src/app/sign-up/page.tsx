@@ -1,15 +1,23 @@
+import { getSession } from "@/actions/user";
 import { Input } from "@/components/Input";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 
 export const metadata: Metadata = {
   title: "Daftar - dudukberbagi",
 };
 
-export default function SignUpPage() {
+export default async function SignUpPage() {
+  const session = await getSession();
+
+  if (session) {
+    redirect("/");
+  }
+
   return (
     <div className=" w-full h-screen relative bg-gray-100 flex">
       <div className=" md:w-[398px] lg:w-[480px] xl:w-[542px] h-full bg-[url('/images/sign-in-image.jpg')] bg-cover bg-center absolute brightness-[0.25]"></div>
