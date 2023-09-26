@@ -1,13 +1,21 @@
 "use client";
 
 import { useScrollPosition } from "@/hooks/useScrollPosition";
-import { cn } from "@/lib/utils";
+import { cn, getInitialName } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiSearch } from "react-icons/fi";
 import Logo from "../Logo";
+import { Button } from "../ui/button";
+import useUserStore from "@/store/userStore";
+import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { User } from "@prisma/client";
 
-export default function Navbar() {
+interface NavbarProps {
+  user: User | null | undefined;
+}
+export default function Navbar({ user }: NavbarProps) {
   const scrollPosition = useScrollPosition();
   const pathname = usePathname();
   return (
@@ -60,20 +68,33 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className=" flex gap-2">
-        <Link
-          href="/sign-in"
-          className=" h-10 rounded-lg text-sm text-orange-500 px-4 flex justify-center items-center border border-orange-500"
-        >
-          Masuk
-        </Link>
-        <Link
-          href="/sign-up"
-          className=" h-10 rounded-lg text-sm text-white px-4 flex justify-center items-center bg-orange-500"
-        >
-          Daftar
-        </Link>
-      </div>
+      {user ? (
+        <div className="flex items-center gap-2">
+          <p className=" text-white">Halo, {user.name}</p>
+          <div className=" w-10 aspect-square rounded-full relative overflow-hidden">
+            <Image
+              src={
+                user?.profileImage && user.profileImage !== ""
+                  ? user.profileImage
+                  : user?.image ??
+                    `https://robohash.org/${user?.name}.png?set=set5`
+              }
+              alt="avatar"
+              fill
+              className=" object-cover"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className=" flex gap-2">
+          <Button asChild size="sm" rounded="lg" variant="outline">
+            <Link href="/sign-in">Masuk</Link>
+          </Button>
+          <Button asChild size="sm" rounded="lg">
+            <Link href="/sign-in">Daftar</Link>
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

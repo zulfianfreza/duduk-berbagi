@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Button } from "../ui/button";
 
 export default function Hero() {
   return (
@@ -19,9 +20,9 @@ export default function Hero() {
             harapan, dan bersama kita bisa menciptakan perubahan yang luar
             biasa.
           </p>
-          <button className=" rounded-full mt-8 px-4 h-10 text-white text-sm flex justify-center items-center bg-orange-500">
+          <Button rounded="full" size="sm" className=" mt-8">
             Donasi Sekarang
-          </button>
+          </Button>
         </div>
       </div>
     </div>

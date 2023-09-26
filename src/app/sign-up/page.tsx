@@ -1,5 +1,6 @@
 import { Input } from "@/components/Input";
 import Logo from "@/components/Logo";
+import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
@@ -27,9 +28,7 @@ export default function SignUpPage() {
             <Input label="Email" />
             <Input label="Password" />
             <p className=" text-sm text-gray-800 underline">Lupa password?</p>
-            <button className=" w-full h-12 rounded-xl bg-orange-500 text-white text-sm flex justify-center items-center">
-              Masuk
-            </button>
+            <Button>Daftar</Button>
           </div>
 
           <p className=" text-sm text-center mt-4">atau daftar dengan</p>

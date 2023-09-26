@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Progress } from "./ui/progress";
 
 export default function CampainItem() {
   return (
@@ -27,12 +28,7 @@ export default function CampainItem() {
           <p className=" text-orange-500 text-lg font-medium">Rp32.682.900</p>
         </div>
         <div className=" mt-2">
-          <div className=" w-full h-[6px] rounded-full overflow-hidden bg-gray-200">
-            <div
-              className=" h-full rounded-full bg-orange-500"
-              style={{ width: "42%" }}
-            ></div>
-          </div>
+          <Progress value={42} />
         </div>
       </div>
     </Link>

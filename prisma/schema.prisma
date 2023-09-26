@@ -65,7 +65,7 @@ model Campaign {
 model Donation {
   id          String   @id @default(cuid())
   campaign_id String
-  user_id     String
+  user_id     String?
   amount      Int
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt

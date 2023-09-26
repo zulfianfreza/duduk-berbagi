@@ -2,6 +2,8 @@
 
 import { cn } from "@/lib/utils";
 import { LuHeartHandshake, LuShare2, LuTrendingUp } from "react-icons/lu";
+import { Button } from "../ui/button";
+import { Progress } from "../ui/progress";
 
 interface SidebarProps {
   className?: string;
@@ -21,17 +23,12 @@ export default function Sidebar({ className }: SidebarProps) {
         <span className=" text-gray-800 font-semibold">Rp100.000.000</span>
       </p>
       <div className=" mt-2">
-        <div className=" w-full h-[6px] rounded-full overflow-hidden bg-gray-200">
-          <div
-            className=" h-full rounded-full bg-orange-500"
-            style={{ width: "42%" }}
-          ></div>
-        </div>
+        <Progress value={42} />
       </div>
       <div className=" mt-2 text-end">
         <p className=" text-gray-500 text-sm">16 hari lagi</p>
       </div>
-      <div className=" mt-8 flex flex-col gap-4">
+      <div className=" mt-4 flex flex-col gap-4">
         {/* TOTAL DONATION */}
         <div className=" flex items-center gap-4">
           <div className=" w-12 aspect-square rounded-full bg-gray-200 flex justify-center items-center">
@@ -58,14 +55,12 @@ export default function Sidebar({ className }: SidebarProps) {
         </div>
       </div>
 
-      <div className=" mt-8 flex flex-col gap-2">
-        <button className=" w-full rounded-lg border border-orange-500 text-gray-800 gap-1 flex justify-center items-center text-sm h-12">
+      <div className=" mt-4 flex flex-col gap-2">
+        <Button className=" gap-1 text-gray-800" variant="outline">
           <LuShare2 />
           Bagikan
-        </button>
-        <button className=" w-full rounded-lg bg-orange-500 text-white flex justify-center items-center text-sm h-12">
-          Donasi Sekarang
-        </button>
+        </Button>
+        <Button>Donasi Sekarang</Button>
       </div>
     </div>
   );
